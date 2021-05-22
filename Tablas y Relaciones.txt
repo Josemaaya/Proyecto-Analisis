@@ -1,0 +1,462 @@
+CREATE TABLE [TBL_Categorias] (
+  [Cod_Categoria] int IDENTITY(1,1) NOT NULL,
+  [Tipo_Categoria] varchar(255) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Categoria])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Categorias--
+ALTER TABLE [dbo].[TBL_Categorias] ADD CONSTRAINT 
+[DF_TBL_Categorias_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Categorias] ADD CONSTRAINT 
+[DF_TBL_Categorias_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Categorias] ADD CONSTRAINT 
+[DF_TBL_Categorias_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Clientes] (
+  [Nit] int NOT NULL,
+  [Nombre_Cliente] varchar(255) NOT NULL,
+  [Apellido_Cliente] varchar(255) NOT NULL,
+  [Correo] varchar(255) NOT NULL,
+  [DPI] int NOT NULL,
+  [Cod_Telefono] int NOT NULL,
+  [Telefono] int NOT NULL,
+  [Direccion] varchar(255) NOT NULL,
+  [Cod_Departamento] int NOT NULL,
+  [Cod_Municipio] int NOT NULL,
+  [Cod_Genero] int NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Nit])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Clientes--
+ALTER TABLE [dbo].[TBL_Clientes] ADD CONSTRAINT 
+[DF_TBL_Clientes_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Clientes] ADD CONSTRAINT 
+[DF_TBL_Clientes_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Clientes] ADD CONSTRAINT 
+[DF_TBL_Clientes_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Contrato] (
+  [Cod_Contrato] int IDENTITY(1,1) NOT NULL,
+  [Tipo_Contrato] varchar(100) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Contrato])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Contrato--
+ALTER TABLE [dbo].[TBL_Contrato] ADD CONSTRAINT 
+[DF_TBL_Contrato_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Contrato] ADD CONSTRAINT 
+[DF_TBL_Contrato_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Contrato] ADD CONSTRAINT 
+[DF_TBL_Contrato_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Departamentos] (
+  [Cod_Departamento] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Departamento] varchar(100) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Departamento])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Departamentos--
+ALTER TABLE [dbo].[TBL_Departamentos] ADD CONSTRAINT 
+[DF_TBL_Departamentos_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Departamentos] ADD CONSTRAINT 
+[DF_TBL_Departamentos_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Departamentos] ADD CONSTRAINT 
+[DF_TBL_Departamentos_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+Alter TABLE [TBL_Detalle] (
+  [Cod_Detalle] int IDENTITY(1,1) NOT NULL,
+  [Cod_Factura] int NOT NULL,
+  [Cod_Producto] int NOT NULL,
+  [Cantidad] varchar(255) NULL,
+  [Subtotal] float (10) NULL,
+  [Precio] float (10) NULL
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Detalle])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+
+--Detalle--
+ALTER TABLE [dbo].[TBL_Detalle] ADD CONSTRAINT 
+[DF_TBL_Detalle_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Detalle] ADD CONSTRAINT 
+[DF_TBL_Detalle_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Detalle] ADD CONSTRAINT 
+[DF_TBL_Detalle_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Empleados] (
+  [Cod_Empleado] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Empleado] varchar(100) NOT NULL,
+  [Apellido_Empleado] varchar(100) NOT NULL,
+  [DPI] int NOT NULL,
+  [Cod_Puesto] int NOT NULL,
+  [Direccion] varchar(255) NOT NULL,
+  [Cod_Departamentos] int NOT NULL,
+  [Cod_Municipios] int NOT NULL,
+  [Nit] int NOT NULL,
+  [Fecha_Nacimiento] date  NOT NULL,
+  [Cod_Telefono] int NOT NULL,
+  [Telefono] int NOT NULL,
+  [Usuario] varchar(100) NOT NULL,
+  [Correo] varchar(255) NULL,
+  [Cod_Estudios] int NOT NULL,
+  [Cod_Pagos] int NOT NULL,
+  [Numero_Cuenta] int NULL,
+  [Cod_Contrato] int NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIOC] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Empleado])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Empleados--
+ALTER TABLE [dbo].[TBL_Empleados] ADD CONSTRAINT 
+[DF_TBL_Empleados_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Empleados] ADD CONSTRAINT 
+[DF_TBL_Empleados_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Empleados] ADD CONSTRAINT 
+[DF_TBL_Empleados_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Estudios] (
+  [Cod_Estudios] int IDENTITY(1,1) NOT NULL,
+  [Nivel] varchar(100) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Estudios])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Estudios--
+ALTER TABLE [dbo].[TBL_Estudios] ADD CONSTRAINT 
+[DF_TBL_Estudios_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Estudios] ADD CONSTRAINT 
+[DF_TBL_Estudios_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Estudios] ADD CONSTRAINT 
+[DF_TBL_Estudios_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+
+CREATE TABLE [TBL_Facturas] (
+  [Cod_Facturas] int IDENTITY(1,1) NOT NULL,
+  [Numero_Factura] int NOT NULL,
+  [Nit] int NOT NULL,
+  [Fecha] date NOT NULL,
+  [Total] float(10) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Facturas])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Usuarios--
+ALTER TABLE [dbo].[TBL_Facturas] ADD CONSTRAINT 
+[DF_TBL_Factyras_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Facturas] ADD CONSTRAINT 
+[DF_TBL_Facturas_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Facturas] ADD CONSTRAINT 
+[DF_TBL_Facturas_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+Go
+
+CREATE TABLE [TBL_Genero] (
+  [Cod_Genero] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Genero] varchar(255) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Genero])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Genero--
+ALTER TABLE [dbo].[TBL_Genero] ADD CONSTRAINT 
+[DF_TBL_Genero_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Genero] ADD CONSTRAINT 
+[DF_TBL_Genero_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Genero] ADD CONSTRAINT 
+[DF_TBL_Genero_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Municipios] (
+  [Cod_Municipio] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Municipio] varchar(100) NOT NULL,
+  [Cod_Departamento] int NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Municipio])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+
+--Municipios--
+ALTER TABLE [dbo].[TBL_Municipios] ADD CONSTRAINT 
+[DF_TBL_Municipios_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Municipios] ADD CONSTRAINT 
+[DF_TBL_Municipios_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Municipios] ADD CONSTRAINT 
+[DF_TBL_Municipios_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Pagos] (
+  [Cod_Pago] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Metodo] varchar(255) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Pago])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Pagos--
+ALTER TABLE [dbo].[TBL_Pagos] ADD CONSTRAINT 
+[DF_TBL_Pagos_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Pagos] ADD CONSTRAINT 
+[DF_TBL_Pagos_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Pagos] ADD CONSTRAINT 
+[DF_TBL_Pagos_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Privilegios] (
+  [Cod_Privilegios] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Privilegio] varchar(100) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Privilegios])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Privilegios--
+ALTER TABLE [dbo].[TBL_Privilegios] ADD CONSTRAINT 
+[DF_TBL_Privilegios_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Privilegios] ADD CONSTRAINT 
+[DF_TBL_Privilegios_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Privilegios] ADD CONSTRAINT 
+[DF_TBL_Privilegios_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Productos] (
+  [Cod_Producto] int IDENTITY(1,1) NOT NULL,
+  [Nombre] varchar(100) NOT NULL,
+  [Descripcion] varchar(255) NOT NULL,
+  [Cod_Proveedor] int NOT NULL,
+  [Stock] int NOT NULL,
+  [Precio_Venta] float(10) NOT NULL,
+  [Precio_Compra] float(10) NOT NULL,
+  [Cod_Categoria] int NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Producto])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Productos--
+ALTER TABLE [dbo].[TBL_Productos] ADD CONSTRAINT 
+[DF_TBL_Productos_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Productos] ADD CONSTRAINT 
+[DF_TBL_Productos_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Productos] ADD CONSTRAINT 
+[DF_TBL_Productos_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Proveedores] (
+  [Cod_Proveedor] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Proveedor] varchar(100) NOT NULL,
+  [Contacto_Directo] varchar(100) NOT NULL,
+  [Cod_Telefono] int NOT NULL,
+  [Telefono] int NOT NULL,
+  [Correo] varchar(255) NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Proveedor])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Proveedores--
+ALTER TABLE [dbo].[TBL_Proveedores] ADD CONSTRAINT 
+[DF_TBL_Proveedores_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Proveedores] ADD CONSTRAINT 
+[DF_TBL_Proveedores_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Proveedores] ADD CONSTRAINT 
+[DF_TBL_Proveedores_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Puestos] (
+  [Cod_Puesto] int IDENTITY(1,1) NOT NULL,
+  [Nombre_Puesto] varchar(100) NOT NULL,
+  [Salario] float(10) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Puesto])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Puestos--
+ALTER TABLE [dbo].[TBL_Puestos] ADD CONSTRAINT 
+[DF_TBL_Puestos_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Puestos] ADD CONSTRAINT 
+[DF_TBL_Puestos_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Puestos] ADD CONSTRAINT 
+[DF_TBL_Puestos_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Telefono] (
+  [Cod_Telefono] int IDENTITY(1,1) NOT NULL,
+  [Tipo_Telefono] varchar(100) NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIO] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Cod_Telefono])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Telefono--
+ALTER TABLE [dbo].[TBL_Telefono] ADD CONSTRAINT 
+[DF_TBL_Telefono_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Telefono] ADD CONSTRAINT 
+[DF_TBL_Telefono_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Telefono] ADD CONSTRAINT 
+[DF_TBL_Telefono_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+CREATE TABLE [TBL_Usuarios] (
+  [Usuario] varchar(100) NOT NULL,
+  [Contraseña] varchar(100) NOT NULL,
+  [Cod_Privilegio] int NOT NULL,
+  [FECHA_COMMIT] [date] NULL,
+  [HORA_COMMIT] [time](2) NULL,
+  [USUARIOC] [nvarchar](50) NULL, 
+  [ESTADO] [int] NULL
+  PRIMARY KEY CLUSTERED ([Usuario])
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+GO
+--Usuarios--
+ALTER TABLE [dbo].[TBL_Usuarios] ADD CONSTRAINT 
+[DF_TBL_Usuarios_ESTADO] DEFAULT ((1)) FOR [ESTADO]
+GO
+ALTER TABLE [dbo].[TBL_Usuarios] ADD CONSTRAINT 
+[DF_TBL_Usuarios_FECHA_COMMIT] DEFAULT (getdate()) FOR [FECHA_COMMIT]
+GO
+ALTER TABLE [dbo].[TBL_Usuarios] ADD CONSTRAINT 
+[DF_TBL_Usuarios_HORA_COMMIT] DEFAULT (getdate()) FOR [HORA_COMMIT]
+GO
+
+ALTER TABLE [TBL_Clientes] ADD CONSTRAINT [Relacion Genero] FOREIGN KEY ([Cod_Genero]) REFERENCES [TBL_Genero] ([Cod_Genero])
+GO
+ALTER TABLE [TBL_Clientes] ADD CONSTRAINT [Relacion Depa] FOREIGN KEY ([Cod_Departamento]) REFERENCES [TBL_Departamentos] ([Cod_Departamento])
+GO
+ALTER TABLE [TBL_Clientes] ADD CONSTRAINT [Relacion Telefono] FOREIGN KEY ([Cod_Telefono]) REFERENCES [TBL_Telefono] ([Cod_Telefono])
+GO
+ALTER TABLE [TBL_Clientes] ADD CONSTRAINT [Relacion Municipios] FOREIGN KEY ([Cod_Municipio]) REFERENCES [TBL_Municipios] ([Cod_Municipio])
+GO
+ALTER TABLE [TBL_Detalle] ADD CONSTRAINT [Relacion Det-Fac] FOREIGN KEY ([Cod_Factura]) REFERENCES [TBL_Facturas] ([Cod_Facturas])
+GO
+ALTER TABLE [TBL_Detalle] ADD CONSTRAINT [Relacion Det-Pro] FOREIGN KEY ([Cod_Producto]) REFERENCES [TBL_Productos] ([Cod_Producto])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Depa] FOREIGN KEY ([Cod_Departamentos]) REFERENCES [TBL_Departamentos] ([Cod_Departamento])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Muni] FOREIGN KEY ([Cod_Municipios]) REFERENCES [TBL_Municipios] ([Cod_Municipio])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Tel] FOREIGN KEY ([Cod_Telefono]) REFERENCES [TBL_Telefono] ([Cod_Telefono])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Puesto] FOREIGN KEY ([Cod_Puesto]) REFERENCES [TBL_Puestos] ([Cod_Puesto])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Estudios] FOREIGN KEY ([Cod_Estudios]) REFERENCES [TBL_Estudios] ([Cod_Estudios])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Usuario] FOREIGN KEY ([Usuario]) REFERENCES [TBL_Usuarios] ([Usuario])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Contra] FOREIGN KEY ([Cod_Contrato]) REFERENCES [TBL_Contrato] ([Cod_Contrato])
+GO
+ALTER TABLE [TBL_Empleados] ADD CONSTRAINT [Relacion Emple-Pagos] FOREIGN KEY ([Cod_Pagos]) REFERENCES [TBL_Pagos] ([Cod_Pago])
+GO
+ALTER TABLE [TBL_Facturas] ADD CONSTRAINT [Relacion Fac-Cli] FOREIGN KEY ([Nit]) REFERENCES [TBL_Clientes] ([Nit])
+GO
+ALTER TABLE [TBL_Municipios] ADD CONSTRAINT [Relacion Depa-Muni] FOREIGN KEY ([Cod_Departamento]) REFERENCES [TBL_Departamentos] ([Cod_Departamento])
+GO
+ALTER TABLE [TBL_Productos] ADD CONSTRAINT [Relacion Proveedor] FOREIGN KEY ([Cod_Proveedor]) REFERENCES [TBL_Proveedores] ([Cod_Proveedor])
+GO
+ALTER TABLE [TBL_Productos] ADD CONSTRAINT [Relacion Categorias] FOREIGN KEY ([Cod_Categoria]) REFERENCES [TBL_Categorias] ([Cod_Categoria])
+GO
+ALTER TABLE [TBL_Proveedores] ADD CONSTRAINT [Relacion Prov-Telefono] FOREIGN KEY ([Cod_Telefono]) REFERENCES [TBL_Telefono] ([Cod_Telefono])
+GO
+ALTER TABLE [TBL_Usuarios] ADD CONSTRAINT [Relacion Usu-Priv] FOREIGN KEY ([Cod_Privilegio]) REFERENCES [TBL_Privilegios] ([Cod_Privilegios])
+GO

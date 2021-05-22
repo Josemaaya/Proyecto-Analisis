@@ -1,0 +1,64 @@
+--Vistas--
+--Vista para clientes--
+CREATE VIEW VIEW_Clientes
+as
+SELECT c.Nit, c.Nombre_Cliente, c.Apellido_Cliente, t.Tipo_Telefono, d.Nombre_Departamento, m.Nombre_Municipio, c.telefono from TBL_Clientes
+as c inner join TBL_Municipios as m
+on c.Cod_Municipio = m.Cod_Municipio inner join TBL_Departamentos as d
+on d.Cod_Departamento = m.Cod_Departamento inner join TBL_telefono as t
+on t.Cod_Telefono = c.Cod_Telefono
+
+--Vista Proveedor/Productos--
+CREATE VIEW VIEW_Proveedor_Productos
+as
+SELECT p.Cod_Producto, p.Nombre, p.Precio_Compra, pp.Nombre_Proveedor, pp.Contacto_Directo, pp.Telefono from TBL_Productos
+as p inner join TBL_Proveedores as pp
+on p.Cod_proveedor = pp.Cod_proveedor
+
+--Vista Informacion/Productos--
+CREATE VIEW VIEW_InventarioProductos
+as
+SELECT pp.Cod_Producto, pp.Nombre, pp.Precio_Compra, pp.Precio_Venta, pp.Stock, c.Tipo_Categoria, p.Nombre_Proveedor from TBL_Productos
+as pp inner join TBL_Proveedores as p
+on pp.Cod_Proveedor = p.Cod_Proveedor inner join TBL_Categorias as c
+on pp.Cod_Categoria = c.Cod_Categoria
+select * from VIEW_InventarioProductos
+
+--Vista Productos/Venta--
+CREATE VIEW VIEW_Productos_Venta
+as
+SELECT p.Cod_Producto, p.Nombre, p.Precio_Venta, p.Stock, c.Tipo_Categoria from TBL_Productos
+as p inner join  TBL_Categorias as c
+on p.Cod_Categoria = c.Cod_Categoria
+select * from VIEW_Productos_Venta
+
+--Vista Empleado/General
+CREATE VIEW VIEW_Empelado_Info
+as
+SELECT e.Cod_Empleado, e.Nombre_Empleado, e.Apellido_Empleado, p.Nombre_Puesto as Puesto, d.Nombre_Departamento, m.Nombre_Municipio, e.Direccion, e.DPI, e.Nit, e.Fecha_Nacimiento, t.Tipo_Telefono, e.Telefono, e.Correo from TBL_Empleados
+as e inner join TBL_Puestos as p
+on e.Cod_Puesto = p.Cod_Puesto inner join tbl_Municipios as m
+on e.Cod_Municipios = m.Cod_Municipio inner join TBL_Departamentos as d
+on d.Cod_Departamento = m.Cod_Departamento inner join TBL_Telefono as t
+on e.Cod_Telefono = t.Cod_Telefono
+select * from VIEW_Empelado_Info
+
+--Vista Pagos/Empleados
+CREATE VIEW VIEW_Pagos_Empleados
+as
+SELECT e.Cod_Empleado, e.Nombre_Empleado, e.Apellido_Empleado, p.Nombre_Puesto as Puesto, co.Tipo_Contrato, p.Salario,  t.Nombre_Metodo, e.Numero_Cuenta, e.Nit from TBL_Empleados
+as e inner join TBL_Puestos as p
+on e.Cod_Puesto = p.Cod_Puesto inner join TBL_Contrato as co
+on e.Cod_Contrato = co.Cod_Contrato inner join TBL_Pagos as t
+on e.Cod_Pagos = t.Cod_Pago
+select * from VIEW_Pagos_Empleados
+
+--Vista Usuarios/Empleados
+CREATE VIEW VIEW_Usuarios_Empleados
+as
+SELECT e.Cod_Empleado, e.Nombre_Empleado, e.Apellido_Empleado, u.Usuario, p.Nombre_Privilegio from TBL_Empleados
+as e inner join TBL_Usuarios as u
+on e.Usuario = u.Usuario inner join TBL_Privilegios as p
+on p.Cod_Privilegios = u.Cod_Privilegio
+
+select * from VIEW_Usuarios_Empleados

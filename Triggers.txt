@@ -1,0 +1,147 @@
+--Triggers--
+--1
+--Mensaje para actualizar producto--
+Create TRIGGER TR_ProductoActualizado
+ON TBL_Productos
+FOR INSERT, UPDATE
+AS
+      IF (select Precio_Venta from inserted) < (select Precio_Compra from inserted)
+        BEGIN
+            ROLLBACK TRANSACTION
+            PRINT 'Precio de venta es menor al de compra'
+        END
+     PRINT 'Producto Ingresado'
+     SELECT * FROM VIEW_InventarioProductos
+go
+--2
+--Verficar que no hayan valores negativos en precios--
+Create trigger TR_ValidacionPrecios
+ON TBL_Productos
+FOR INSERT, UPDATE
+AS
+     IF (select Precio_Compra from inserted)<=0
+     BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Precio de compra incorrecto (negativo)'
+     END
+     IF (select Precio_Venta from inserted)<=0
+     BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Precio de venta incorrecto (negativo)'
+     END
+	 IF (select Stock from inserted)<=0
+     BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'El stock es negativo'
+     END
+GO
+--3
+--No registrar nit y telefono con datos negativos--
+Create TRIGGER TR_Mensaje_Clientes
+ON TBL_Clientes
+FOR INSERT, UPDATE
+AS
+        IF (select Nit from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, el Nit es menor 0'
+        END
+        IF (select Telefono from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, el telefono de menor a 0'
+
+        END
+        ELSE
+            PRINT 'Cliente Actualizado'
+            SELECT * FROM VIEW_Clientes
+go
+--4
+--No registrar salario negativo--
+CREATE TRIGGER TR_Salario
+ON TBL_Puestos
+FOR INSERT, UPDATE
+AS
+        IF (select Salario from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, el salario es menor o igual a cero'
+        END
+        ELSE
+            PRINT 'Puesto Actualizado'
+            SELECT * FROM TBL_Puestos
+go
+--5
+--No poder registrar DPI, Telefono, y Nit negativo--
+Create TRIGGER TR_InformacionEmpleado
+ON TBL_Empleados
+FOR INSERT, UPDATE
+AS
+        IF (select DPI from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, DPI es negativo'
+        END
+        IF (select Nit from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, Nit es negativo'
+        END
+        IF (select Telefono from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, Telefono es negativo'
+        END
+        ELSE
+            PRINT 'Empleado Actualizado'
+            SELECT * FROM VIEW_Empelado_Info
+go
+--6
+--No registrar telefono negativo--
+CREATE TRIGGER TR_InformacionProveedores
+ON TBL_Proveedores
+FOR INSERT, UPDATE
+AS
+        IF (select telefono from inserted)<=0
+        BEGIN
+           ROLLBACK TRANSACTION
+           PRINT 'Error, Telefono es negativo'
+        END
+        ELSE
+            PRINT 'Proveedor Actualizado'
+            SELECT * FROM TBL_Proveedores
+go
+--7
+--No Eliminar Registros Municipios--
+CREATE TRIGGER TR_Noborrar_Municipios
+ON TBL_Municipios
+FOR Delete
+AS
+        BEGIN
+		   PRINT 'No se permiten borrar municipios'
+           ROLLBACK TRANSACTION
+        END
+go
+--8
+--No Agregar Registros Municipios--
+CREATE TRIGGER TR_Agregar_Municipios
+ON TBL_Municipios
+FOR insert
+AS
+        BEGIN
+		   PRINT 'No se permiten agregar municipios'
+           ROLLBACK TRANSACTION
+        END
+go
+--9
+--No Agregar Registros Departamentos--
+CREATE TRIGGER TR_Agregar_Departamentos
+ON TBL_Departamentos
+FOR insert
+AS
+        BEGIN
+		   PRINT 'No se permiten agregar Departamentos'
+           ROLLBACK TRANSACTION
+        END
+go
+select * from TBL_Departamentos

@@ -1,0 +1,170 @@
+
+--Procedimientos Almacenados CRUD de cada tabla--
+--1
+--Tabla Clientes--
+Create procedure SP_Instert_Clientes
+(@vNit int, @vNombre_Cliente varchar (100), @vApellido_Cliente varchar (255), @vCorreo varchar (255), @vDPI int, @vCod_Telefono int,
+@vTelefono int, @vDireccion varchar (255), @vCod_Departamento int, @vCod_Municipio int, @vCod_Genero int, @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Clientes
+(Nit, Nombre_Cliente, Apellido_Cliente, Correo, DPI, Cod_Telefono, Telefono, Direccion, Cod_Departamento, Cod_Municipio, Cod_Genero, USUARIO)
+VALUES (@vNit, @vNombre_Cliente, @vApellido_Cliente, @vCorreo, @vDPI, @vCod_Telefono, @vTelefono, @vDireccion, @vCod_Departamento, @vCod_Municipio, @vCod_Genero, @vUSUARIO) 
+END
+
+--2
+--Tabla Proveedores--
+Create procedure SP_Insert_Proveedores
+(@vNombre_Proveedor varchar(100), @vContacto_Directo varchar (100), @vCod_Telefono int, @vTelefono int, @vCorreo varchar(255), @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Proveedores
+   (Nombre_Proveedor, Contacto_Directo, Cod_Telefono, Telefono, Correo, USUARIO)
+   Values (@vNombre_Proveedor, @vContacto_Directo, @vCod_Telefono, @vTelefono, @vCorreo, @vUSUARIO)
+   END
+ 
+ --3
+ --Tabla Productos--
+CREATE procedure SP_Insert_Productos
+(@vNombre varchar(150), @vDescripcion varchar(150), @vCod_Proveedor int, @vStock int, @vPrecio_Venta float, @vPrecio_Compra float, @vCod_Categoria int, @vUSUARIO varchar(75))
+AS
+    BEGIN
+    INSERT INTO TBL_Productos
+    (Nombre, Descripcion, Cod_Proveedor, Stock, Precio_Venta, Precio_Compra, Cod_Categoria, USUARIO)
+VALUES (@vNombre, @vDescripcion, @vCod_Proveedor, @vStock, @vPrecio_Venta, @vPrecio_Compra, @vCod_Categoria, @vUSUARIO)
+END
+
+--4
+--Tabla Departamentos--
+Create procedure SP_Insert_Departamentos
+(@vNombre_Departamento varchar (100), @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Departamentos
+   (Nombre_Departamento, USUARIO)
+   VALUES (@vNombre_Departamento, @vUSUARIO)
+   END
+
+--5
+--Tabla Municipios--
+Create procedure SP_Insert_Municipios
+(@vNombre_Municipio varchar (100), @vCod_Departamento int, @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Municipios
+   (Nombre_Municipio, Cod_Departamento, USUARIO)
+   VALUES (@vNombre_Municipio, @vCod_Departamento, @vUSUARIO)
+   END
+
+--6
+--Tabla Genero--
+Create procedure SP_Insert_Genero
+(@vNombre_Genero varchar (100), @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Genero
+   (Nombre_Genero, USUARIO)
+   VALUES (@vNombre_Genero, @vUSUARIO)
+   END
+--7
+--Tabla Telefono--
+Create procedure SP_Insert_Telefono
+(@vTipo_Telefono int, @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Telefono
+   (Tipo_Telefono, USUARIO)
+   VALUES (@vTipo_Telefono, @vUSUARIO)
+   END
+
+--8
+--Tabla Categorias--
+CREATE PROCEDURE SP_Insert_Categorias
+(@vTipo_Categoria varchar (150), @vUSUARIO varchar (75))
+AS
+    BEGIN
+    INSERT INTO TBL_Categorias
+    (Tipo_Categoria, USUARIO)
+    VALUES (@vTipo_Categoria, @vUSUARIO)
+END
+select * from TBL_Categorias
+
+--9
+--Tabla Contratos--
+CREATE PROCEDURE SP_Insert_Contrato
+(@vTipo_Contrato varchar (150), @vUSUARIO varchar (75))
+AS
+    BEGIN
+    INSERT INTO TBL_Contrato
+    (Tipo_Contrato, USUARIO)
+    VALUES (@vTipo_Contrato, @vUSUARIO)
+END
+
+--10
+--Tabla Estudios--
+CREATE PROCEDURE SP_Insert_Estudios
+(@vNivel varchar (150), @vUSUARIO varchar (75))
+AS
+    BEGIN
+    INSERT INTO TBL_Estudios
+    (Nivel, USUARIO)
+    VALUES (@vNivel, @vUSUARIO)
+END
+
+--11
+--Tabla Puestos--
+CREATE PROCEDURE SP_Insert_Puestos
+(@vNombre_Puesto varchar (150), @vSalario int, @vUSUARIO varchar (75))
+AS
+    BEGIN
+    INSERT INTO TBL_Puestos
+    (Nombre_Puesto, Salario, USUARIO)
+    VALUES (@vNombre_Puesto, @vSalario, @vUSUARIO)
+END
+
+--12
+--Tabla Usuarios--
+Create procedure SP_Insert_Usuarios
+(@vUsuario varchar(50), @vContraseña varchar(50), @vCod_Privilegio int, @vUSUARIOC varchar(50))
+as
+   BEGIN
+   INSERT INTO TBL_Usuario
+   (Usuario, Contraseña, Cod_Privilegio, USUARIOC)
+   Values (@vUsuario, @vContraseña, @vCod_Privilegio, @vUSUARIOC)
+   END
+
+--13
+--Tabla Empleados--
+Create procedure SP_Insert_Empleados
+  (@vNombre_Empelado varchar(50), @vApellido_Empleado varchar(50), @vDPI int, @vCod_Puesto int, @vDireccion varchar(100), @vCod_Departamentos int, @vCod_Municipios int, @vNit int, @vFecha_Nacimiento date, 
+  @vCod_Telefono int, @vTelefono int, @vUsuario varchar(100), @vCorreo varchar(50), @vCod_Estudios int,  @vCod_Pagos int, @vNumero_Cuenta int, @vCod_Contrato int, @vUSUARIOC varchar(50))
+as
+   BEGIN
+  INSERT INTO TBL_Empleados
+  (Nombre_Empleado, Apellido_Empleado, DPI, Cod_Puesto, Direccion, Cod_Departamentos, Cod_Municipios, Nit, Fecha_Nacimiento, Cod_Telefono, Telefono, Usuario, Correo, Cod_Estudios, Cod_Pagos, 
+   Numero_Cuenta, Cod_Contrato, USUARIOC)
+   Values (@vNombre_Empelado, @vApellido_Empleado, @vDPI, @vCod_Puesto, @vDireccion, @vCod_Departamentos, @vCod_Municipios, @vNit, @vFecha_Nacimiento, 
+  @vCod_Telefono, @vTelefono, @vUsuario, @vCorreo, @vCod_Estudios,  @vCod_Pagos, @vNumero_Cuenta, @vCod_Contrato, @vUSUARIOC)
+   END
+   exec SP_Insert_Empleados 'Juan', 'Lopez', 32554547, 1, 'Barrio La Estacion', 22, 338, '46229875', '1999-04-30', 1, '79224854', 'juan.lopez', 'jouanlopez@yahoo.com', 4, 1, 888854424, 1, 'JoseAyala'
+--14
+--Tabla Pagos--
+Create procedure SP_Insert_Pagos
+(@vNombre_Metodo int, @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Pagos
+   (Nombre_Metodo, USUARIO)
+   VALUES (@vNombre_Metodo, @vUSUARIO)
+   END
+
+--15
+ --Tabla Privilegios--
+ Create procedure SP_Insert_Privilegios
+(@vNombre_Privilegio int, @vUSUARIO varchar (50))
+as
+   BEGIN
+   INSERT INTO TBL_Privilegios
+   (Nombre_Privilegio, USUARIO)
+   VALUES (@vNombre_Privilegio, @vUSUARIO)
+   END

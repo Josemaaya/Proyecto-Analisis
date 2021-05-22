@@ -1,0 +1,603 @@
+--Inserts--
+--Tabla Genero--
+INSERT INTO TBL_Genero (Nombre_Genero, USUARIO)
+VALUES ('Masculino', 'JoseAyala')
+INSERT INTO TBL_Genero (Nombre_Genero, USUARIO)
+VALUES ('Femenino', 'JoseAyala')
+--Tabla Telefono--
+INSERT INTO TBL_Telefono (Tipo_Telefono, USUARIO)
+VALUES ('Casa', 'JoseAyala')
+INSERT INTO TBL_Telefono (Tipo_Telefono, USUARIO)
+VALUES ('Celular', 'JoseAyala')
+--Tabla Departamento--
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Alta Verapaz', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Baja Verapaz', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Chimaltenango', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Chiquimula', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('El Progreso', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Escuintla', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Guatemala', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Huehuetenango', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Izabal', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Jalapa', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Jutiapa', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Petén', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO)
+VALUES ('Quetzaltenango', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Quiché', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Retalhuleu', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Sacatepéquez', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('San Marcos', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Santa Rosa', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Solola', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Suchitepéquez', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Totonicapán', 'JoseAyala');
+INSERT INTO TBL_Departamentos (Nombre_Departamento, USUARIO) 
+VALUES ('Zacapa', 'JoseAyala');
+--Tabla Municipios--
+INSERT INTO TBL_Municipios
+(Nombre_Municipio, Cod_Departamento, USUARIO)
+VALUES
+-- Alta Verapaz
+('Chahal', 1, 'JoseAyala'),
+('Chisec', 1, 'JoseAyala'),
+('Cobán', 1, 'JoseAyala'),
+('Fray Bartolomé de las Casas', 1, 'JoseAyala'),
+('La Tinta', 1, 'JoseAyala'),
+('Lanquín', 1, 'JoseAyala'),
+('Panzós', 1, 'JoseAyala'),
+('Raxruhá', 1, 'JoseAyala'),
+('San Cristóbal Verapaz', 1, 'JoseAyala'),
+('San Juan Chamelco', 1, 'JoseAyala'),
+('San Pedro Carchá', 1, 'JoseAyala'),
+('Santa Cruz Verapaz', 1, 'JoseAyala'),
+('Santa María Cahabón', 1, 'JoseAyala'),
+('Senahú', 1, 'JoseAyala'),
+('Tamahú', 1, 'JoseAyala'),
+('Tactic', 1, 'JoseAyala'),
+('Tucurú', 1, 'JoseAyala'),
+-- Baja Verapaz
+('Cubulco', 2, 'JoseAyala'),
+('Granados', 2,'JoseAyala'),
+('Purulhá', 2,'JoseAyala'),
+('Rabinal', 2,'JoseAyala'),
+( 'Salamá', 2,'JoseAyala'),
+('San Jerónimo', 2,'JoseAyala'),
+('San Miguel Chicaj', 2,'JoseAyala'),
+('Santa Cruz el Chol', 2,'JoseAyala'),
+ 
+-- Chimaltenango
+('Acatenango', 3,'JoseAyala'),
+('Chimaltenango', 3,'JoseAyala'),
+('El Tejar', 3,'JoseAyala'),
+('Parramos', 3,'JoseAyala'),
+('Patzicía', 3,'JoseAyala'),
+('Patzún', 3,'JoseAyala'),
+('Pochuta', 3,'JoseAyala'),
+('San Andrés Itzapa', 3,'JoseAyala'),
+('San José Poaquíl', 3,'JoseAyala'),
+('San Juan Comalapa', 3,'JoseAyala'),
+('San Martín Jilotepeque', 3,'JoseAyala'),
+('Santa Apolonia', 3,'JoseAyala'),
+('Santa Cruz Balanyá', 3,'JoseAyala'),
+('Tecpán', 3,'JoseAyala'),
+('Yepocapa', 3,'JoseAyala'),
+('Zaragoza', 3,'JoseAyala'),
+
+-- Chiquimula
+('Camotán', 4,'JoseAyala'),
+('Chiquimula', 4,'JoseAyala'),
+('Concepción Las Minas', 4,'JoseAyala'),
+('Esquipulas', 4,'JoseAyala'),
+('Ipala', 4,'JoseAyala'),
+('Jocotán', 4,'JoseAyala'),
+('Olopa', 4,'JoseAyala'),
+('Quezaltepeque', 4,'JoseAyala'),
+('San Jacinto', 4,'JoseAyala'),
+('San José la Arada', 4,'JoseAyala'),
+('San Juan Ermita', 4,'JoseAyala'),
+
+-- El Progreso
+('El Jícaro', 5,'JoseAyala'),
+('Guastatoya', 5,'JoseAyala'),
+('Morazán', 5,'JoseAyala'),
+('San Agustín Acasaguastlán', 5,'JoseAyala'),
+('San Antonio La Paz', 5,'JoseAyala'),
+('San Cristóbal Acasaguastlán', 5,'JoseAyala'),
+('Sanarate', 5,'JoseAyala'),
+('Sansare', 5,'JoseAyala'),
+
+-- Escuintla
+('Escuintla', 6,'JoseAyala'),
+('Guanagazapa', 6,'JoseAyala'),
+('Iztapa', 6,'JoseAyala'),
+('La Democracia', 6,'JoseAyala'),
+('La Gomera', 6,'JoseAyala'),
+('Masagua', 6,'JoseAyala'),
+('Nueva Concepción', 6,'JoseAyala'),
+('Palín', 6,'JoseAyala'),
+('San José', 6,'JoseAyala'),
+('San Vicente Pacaya', 6,'JoseAyala'),
+('Santa Lucía Cotzumalguapa', 6,'JoseAyala'),
+('Siquinalá', 6,'JoseAyala'),
+('Tiquisate', 6,'JoseAyala'),
+
+-- Guatemala
+('Amatitlán', 7,'JoseAyala'),
+('Chinautla', 7,'JoseAyala'),
+('Chuarrancho', 7,'JoseAyala'),
+('Guatemala', 7,'JoseAyala'),
+('Fraijanes', 7,'JoseAyala'),
+('Mixco', 7,'JoseAyala'),
+('Palencia', 7,'JoseAyala'),
+('San José del Golfo', 7,'JoseAyala'),
+('San José Pinula', 7,'JoseAyala'),
+('San Juan Sacatepéquez', 7,'JoseAyala'),
+('San Miguel Petapa', 7,'JoseAyala'),
+('San Pedro Ayampuc', 7,'JoseAyala'),
+('San Pedro Sacatepéquez', 7,'JoseAyala'),
+('San Raymundo', 7,'JoseAyala'),
+('Santa Catarina Pinula', 7,'JoseAyala'),
+('Villa Canales', 7,'JoseAyala'),
+('Villa Nueva', 7,'JoseAyala'),
+
+-- Huehuetenango
+('Aguacatán', 8,'JoseAyala'),
+('Chiantla', 8,'JoseAyala'),
+('Colotenango', 8,'JoseAyala'),
+('Concepción Huista', 8,'JoseAyala'),
+('Cuilco', 8,'JoseAyala'),
+('Huehuetenango', 8,'JoseAyala'),
+('Jacaltenango', 8,'JoseAyala'),
+('La Democracia', 8,'JoseAyala'),
+('La Libertad', 8,'JoseAyala'),
+('Malacatancito', 8,'JoseAyala'),
+('Nentón', 8,'JoseAyala'),
+('San Antonio Huista', 8,'JoseAyala'),
+('San Gaspar Ixchil', 8,'JoseAyala'),
+('San Ildefonso Ixtahuacán', 8,'JoseAyala'),
+('San Juan Atitán', 8,'JoseAyala'),
+('San Juan Ixcoy', 8,'JoseAyala'),
+('San Mateo Ixtatán', 8,'JoseAyala'),
+('San Miguel Acatán', 8,'JoseAyala'),
+('San Pedro Nécta', 8,'JoseAyala'),
+('San Pedro Soloma', 8,'JoseAyala'),
+('San Rafael La Independencia', 8,'JoseAyala'),
+('San Rafael Pétzal', 8,'JoseAyala'),
+('San Sebastián Coatán', 8,'JoseAyala'),
+('San Sebastián Huehuetenango', 8,'JoseAyala'),
+('Santa Ana Huista', 8,'JoseAyala'),
+('Santa Bárbara', 8,'JoseAyala'),
+('Santa Cruz Barillas', 8,'JoseAyala'),
+('Santa Eulalia', 8,'JoseAyala'),
+('Santiago Chimaltenango', 8,'JoseAyala'),
+('Tectitán', 8,'JoseAyala'),
+('Todos Santos Cuchumatán', 8,'JoseAyala'),
+('Unión Cantinil', 8,'JoseAyala'),
+
+-- Izabal
+('El Estor', 9,'JoseAyala'),
+('Livingston', 9,'JoseAyala'),
+('Los Amates', 9,'JoseAyala'),
+('Morales', 9,'JoseAyala'),
+('Puerto Barrios', 9,'JoseAyala'),
+
+-- Jalapa
+('Jalapa', 10,'JoseAyala'),
+('Mataquescuintla', 10,'JoseAyala'),
+('Monjas', 10,'JoseAyala'),
+('San Carlos Alzatate', 10,'JoseAyala'),
+('San Luis Jilotepeque', 10,'JoseAyala'),
+('San Manuel Chaparrón', 10,'JoseAyala'),
+('San Pedro Pinula', 10,'JoseAyala'),
+
+-- Jutiapa
+('Agua Blanca', 11,'JoseAyala'),
+('Asunción Mita', 11,'JoseAyala'),
+('Atescatempa', 11,'JoseAyala'),
+('Comapa', 11,'JoseAyala'),
+('Conguaco', 11,'JoseAyala'),
+('El Adelanto', 11,'JoseAyala'),
+('El Progreso', 11,'JoseAyala'),
+('Jalpatagua', 11,'JoseAyala'),
+('Jerez', 11,'JoseAyala'),
+('Jutiapa', 11,'JoseAyala'),
+('Moyuta', 11,'JoseAyala'),
+('Pasaco', 11,'JoseAyala'),
+('Quesada', 11,'JoseAyala'),
+('San José Acatempa', 11,'JoseAyala'),
+('Santa Catarina Mita', 11,'JoseAyala'),
+('Yupiltepeque', 11,'JoseAyala'),
+('Zapotitlán', 11,'JoseAyala'),
+
+-- Petén
+('Dolores', 12,'JoseAyala'),
+('El Chal', 12,'JoseAyala'),
+('Ciudad Flores', 12,'JoseAyala'),
+('La Libertad', 12,'JoseAyala'),
+('Las Cruces', 12,'JoseAyala'),
+('Melchor de Mencos', 12,'JoseAyala'),
+('Poptún', 12,'JoseAyala'),
+('San Andrés', 12,'JoseAyala'),
+('San Benito', 12,'JoseAyala'),
+('San Francisco', 12,'JoseAyala'),
+('San José', 12,'JoseAyala'),
+('San Luis', 12,'JoseAyala'),
+('Santa Ana', 12,'JoseAyala'),
+('Sayaxché', 12,'JoseAyala'),
+
+-- Quetzaltenango
+('Almolonga', 13,'JoseAyala'),
+('Cabricán', 13,'JoseAyala'),
+('Cajolá', 13,'JoseAyala'),
+('Cantel', 13,'JoseAyala'),
+('Coatepeque', 13,'JoseAyala'),
+('Colomba Costa Cuca', 13,'JoseAyala'),
+('Concepción Chiquirichapa', 13,'JoseAyala'),
+('El Palmar', 13,'JoseAyala'),
+('Flores Costa Cuca', 13,'JoseAyala'),
+('Génova', 13,'JoseAyala'),
+('Huitán', 13,'JoseAyala'),
+('La Esperanza', 13,'JoseAyala'),
+('Olintepeque', 13,'JoseAyala'),
+('Palestina de Los Altos', 13,'JoseAyala'),
+('Quetzaltenango', 13,'JoseAyala'),
+('Salcajá', 13,'JoseAyala'),
+('San Carlos Sija', 13,'JoseAyala'),
+('San Francisco La Unión', 13,'JoseAyala'),
+('San Juan Ostuncalco', 13,'JoseAyala'),
+('San Martín Sacatepéquez', 13,'JoseAyala'),
+('San Mateo', 13,'JoseAyala'),
+('San Miguel Sigüilá', 13,'JoseAyala'),
+('Sibilia', 13,'JoseAyala'),
+('Zunil', 13,'JoseAyala'),
+
+-- Quiché
+('Canillá', 14,'JoseAyala'),
+('Chajul', 14,'JoseAyala'),
+('Chicamán', 14,'JoseAyala'),
+('Chiché', 14,'JoseAyala'),
+('Chichicastenango', 14,'JoseAyala'),
+('Chinique', 14,'JoseAyala'),
+('Cunén', 14,'JoseAyala'),
+('Ixcán Playa Grande', 14,'JoseAyala'),
+('Joyabaj', 14,'JoseAyala'),
+('Nebaj', 14,'JoseAyala'),
+('Pachalum', 14,'JoseAyala'),
+('Patzité', 14,'JoseAyala'),
+('Sacapulas', 14,'JoseAyala'),
+('San Andrés Sajcabajá', 14,'JoseAyala'),
+('San Antonio Ilotenango', 14,'JoseAyala'),
+('San Bartolomé Jocotenango', 14,'JoseAyala'),
+('San Juan Cotzal', 14,'JoseAyala'),
+('San Pedro Jocopilas', 14,'JoseAyala'),
+('Santa Cruz del Quiché', 14,'JoseAyala'),
+('Uspantán', 14,'JoseAyala'),
+('Zacualpa', 14,'JoseAyala'),
+
+-- Retalhuleu
+('Champerico', 15,'JoseAyala'),
+('El Asintal', 15,'JoseAyala'),
+('Nuevo San Carlos', 15,'JoseAyala'),
+('Retalhuleu', 15,'JoseAyala'),
+('San Andrés Villa Seca', 15,'JoseAyala'),
+('San Felipe Reu', 15,'JoseAyala'),
+('San Martín Zapotitlán', 15,'JoseAyala'),
+('San Sebastián', 15,'JoseAyala'),
+('Santa Cruz Muluá', 15,'JoseAyala'),
+
+-- Sacatepéquez
+('Alotenango', 16,'JoseAyala'),
+('Ciudad Vieja', 16,'JoseAyala'),
+('Jocotenango', 16,'JoseAyala'),
+('Antigua Guatemala', 16,'JoseAyala'),
+('Magdalena Milpas Altas', 16,'JoseAyala'),
+('Pastores', 16,'JoseAyala'),
+('San Antonio Aguas Calientes', 16,'JoseAyala'),
+('San Bartolomé Milpas Altas', 16,'JoseAyala'),
+('San Lucas Sacatepéquez', 16,'JoseAyala'),
+('San Miguel Dueñas', 16,'JoseAyala'),
+('Santa Catarina Barahona', 16,'JoseAyala'),
+('Santa Lucía Milpas Altas', 16,'JoseAyala'),
+('Santa María de Jesús', 16,'JoseAyala'),
+('Santiago Sacatepéquez', 16,'JoseAyala'),
+('Santo Domingo Xenacoj', 16,'JoseAyala'),
+('Sumpango', 16,'JoseAyala'),
+
+-- San Marcos
+('Ayutla', 17,'JoseAyala'),
+('Catarina', 17,'JoseAyala'),
+('Comitancillo', 17,'JoseAyala'),
+('Concepción Tutuapa', 17,'JoseAyala'),
+('El Quetzal', 17,'JoseAyala'),
+('El Tumbador', 17,'JoseAyala'),
+('Esquipulas Palo Gordo', 17,'JoseAyala'),
+('Ixchiguán', 17,'JoseAyala'),
+('La Blanca', 17,'JoseAyala'),
+('La Reforma', 17,'JoseAyala'),
+('Malacatán', 17,'JoseAyala'),
+('Nuevo Progreso', 17,'JoseAyala'),
+('Ocós', 17,'JoseAyala'),
+('Pajapita', 17,'JoseAyala'),
+('Río Blanco', 17,'JoseAyala'),
+('San Antonio Sacatepéquez', 17,'JoseAyala'),
+('San Cristóbal Cucho', 17,'JoseAyala'),
+('San José El Rodeo', 17,'JoseAyala'),
+('San José Ojetenam', 17,'JoseAyala'),
+('San Lorenzo', 17,'JoseAyala'),
+('San Marcos', 17,'JoseAyala'),
+('San Miguel Ixtahuacán', 17,'JoseAyala'),
+('San Pablo', 17,'JoseAyala'),
+('San Pedro Sacatepéquez', 17,'JoseAyala'),
+('San Rafael Pie de la Cuesta', 17,'JoseAyala'),
+('Sibinal', 17,'JoseAyala'),
+('Sipacapa', 17,'JoseAyala'),
+('Tacaná', 17,'JoseAyala'),
+('Tajumulco', 17,'JoseAyala'),
+('Tejutla', 17,'JoseAyala'),
+
+-- Santa Rosa
+('Barberena', 18,'JoseAyala'),
+('Casillas', 18,'JoseAyala'),
+('Chiquimulilla', 18,'JoseAyala'),
+('Cuilapa', 18,'JoseAyala'),
+('Guazacapán', 18,'JoseAyala'),
+('Nueva Santa Rosa', 18,'JoseAyala'),
+('Oratorio', 18,'JoseAyala'),
+('Pueblo Nuevo Viñas', 18,'JoseAyala'),
+('San Juan Tecuaco', 18,'JoseAyala'),
+('San Rafael las Flores', 18,'JoseAyala'),
+('Santa Cruz Naranjo', 18,'JoseAyala'),
+('Santa María Ixhuatán', 18,'JoseAyala'),
+('Santa Rosa de Lima', 18,'JoseAyala'),
+('Taxisco', 18,'JoseAyala'),
+
+-- Sololá
+('Concepción', 19,'JoseAyala'),
+('Nahualá', 19,'JoseAyala'),
+('Panajachel', 19,'JoseAyala'),
+('San Andrés Semetabaj', 19,'JoseAyala'),
+('San Antonio Palopó', 19,'JoseAyala'),
+('San José Chacayá', 19,'JoseAyala'),
+('San Juan La Laguna', 19,'JoseAyala'),
+('San Lucas Tolimán', 19,'JoseAyala'),
+('San Marcos La Laguna', 19,'JoseAyala'),
+('San Pablo La Laguna', 19,'JoseAyala'),
+('San Pedro La Laguna', 19,'JoseAyala'),
+('Santa Catarina Ixtahuacán', 19,'JoseAyala'),
+('Santa Catarina Palopó', 19,'JoseAyala'),
+('Santa Clara La Laguna', 19,'JoseAyala'),
+('Santa Cruz La Laguna', 19,'JoseAyala'),
+('Santa Lucía Utatlán', 19,'JoseAyala'),
+('Santa María Visitación', 19,'JoseAyala'),
+('Santiago Atitlán', 19,'JoseAyala'),
+('Sololá', 19,'JoseAyala'),
+
+-- Suchitepéquez
+('Chicacao', 20,'JoseAyala'),
+('Cuyotenango', 20,'JoseAyala'),
+('Mazatenango', 20,'JoseAyala'),
+('Patulul', 20,'JoseAyala'),
+('Pueblo Nuevo', 20,'JoseAyala'),
+('Río Bravo', 20,'JoseAyala'),
+('Samayac', 20,'JoseAyala'),
+('San Antonio Suchitepéquez', 20,'JoseAyala'),
+('San Bernardino', 20,'JoseAyala'),
+('San Francisco Zapotitlán', 20,'JoseAyala'),
+('San Gabriel', 20,'JoseAyala'),
+('San José El Idolo', 20,'JoseAyala'),
+('San José La Maquina', 20,'JoseAyala'),
+('San Juan Bautista', 20,'JoseAyala'),
+('San Lorenzo', 20,'JoseAyala'),
+('San Miguel Panán', 20,'JoseAyala'),
+('San Pablo Jocopilas', 20,'JoseAyala'),
+('Santa Bárbara', 20,'JoseAyala'),
+('Santo Domingo Suchitepéquez', 20,'JoseAyala'),
+('Santo Tomás La Unión', 20,'JoseAyala'),
+('Zunilito', 20,'JoseAyala'),
+
+-- Totonicapán
+('Momostenango', 21,'JoseAyala'),
+('San Andrés Xecul', 21,'JoseAyala'),
+('San Bartolo', 21,'JoseAyala'),
+('San Cristóbal Totonicapán', 21,'JoseAyala'),
+('San Francisco El Alto', 21,'JoseAyala'),
+('Santa Lucía La Reforma', 21,'JoseAyala'),
+('Santa María Chiquimula', 21,'JoseAyala'),
+('Totonicapán', 21,'JoseAyala'),
+
+-- Zacapa
+('Cabañas', 22,'JoseAyala'),
+('Estanzuela', 22,'JoseAyala'),
+('Gualán', 22,'JoseAyala'),
+('Huité', 22,'JoseAyala'),
+('La Unión', 22,'JoseAyala'),
+('Río Hondo', 22,'JoseAyala'),
+('San Diego', 22,'JoseAyala'),
+('San Jorge', 22,'JoseAyala'),
+('Teculután', 22,'JoseAyala'),
+('Usumatlán', 22,'JoseAyala'),
+('Zacapa', 22,'JoseAyala');
+
+--Tabla Clientes--
+INSERT INTO TBL_Clientes
+(Nit, Nombre_Cliente, Apellido_Cliente, Correo, DPI, Cod_Telefono, Telefono, Direccion, Cod_Departamento, Cod_Municipio, Cod_Genero, USUARIO)
+VALUES 
+('77815477', 'Ricardo', 'Diaz', 'ricardorjh@hotmail.com',  5457955, 2, '54854896', 'Barrio El Bordo', 22, 338, 1, 'JoseAyala');
+INSERT INTO TBL_Clientes
+(Nit, Nombre_Cliente, Apellido_Cliente, Correo, DPI, Cod_Telefono, Telefono, Direccion, Cod_Departamento, Cod_Municipio, Cod_Genero, USUARIO)
+VALUES 
+('98785458', 'Jose', 'Garcia', 'josejosegarcia@hotmail.com',  2354857, 2, '54856874', 'Calle el Hospital', 22, 338, 1, 'JoseAyala');
+INSERT INTO TBL_Clientes
+(Nit, Nombre_Cliente, Apellido_Cliente, Correo, DPI, Cod_Telefono, Telefono, Direccion, Cod_Departamento, Cod_Municipio, Cod_Genero, USUARIO)
+VALUES 
+('41523655', 'Sandra', 'Lopez', 'sandritalp@gmail.com',  6562787, 2, '36521454', 'La Banvi', 22, 338, 2, 'JoseAyala');
+
+--Tabla Proveedores--
+INSERT INTO TBL_Proveedores
+(Nombre_Proveedor, Contacto_Directo, Cod_Telefono, Telefono, Correo, Usuario)
+VALUES 
+('LALA', 'Brandon Osorio', 2, 35489785, 'brandon12o@hotmail.com', 'JoseAyala');
+INSERT INTO TBL_Proveedores
+(Nombre_Proveedor, Contacto_Directo, Cod_Telefono, Telefono, Correo, Usuario)
+VALUES 
+('DIANA', 'Jose Gregorio', 2, 79452568, 'Gregory20o@hotmail.com', 'JoseAyala');
+INSERT INTO TBL_Proveedores
+(Nombre_Proveedor, Contacto_Directo, Cod_Telefono, Telefono, Correo, Usuario)
+VALUES 
+('KELLOGS', 'Jenifer Paz', 2, 22489879, 'jenipaz123@hotmail.com', 'JoseAyala');
+
+--Tabla Categorias--
+INSERT INTO TBL_Categorias
+(Tipo_Categoria, Usuario)
+VALUES 
+('Lacteos', 'JoseAyala');
+INSERT INTO TBL_Categorias
+(Tipo_Categoria, Usuario)
+VALUES 
+('Golosinas', 'JoseAyala');
+INSERT INTO TBL_Categorias
+(Tipo_Categoria, Usuario)
+VALUES 
+('Cereales', 'JoseAyala');
+
+--Tabla Productos--
+INSERT INTO TBL_Productos
+(Nombre, Descripcion, Cod_Proveedor, Stock, Precio_Venta, Precio_Compra, Cod_Categoria, USUARIO)
+VALUES
+('Leche LALA', 'Leche de 120ml', 1, 45, 12.50, 10.50, 1, 'JoseAyala'); 
+INSERT INTO TBL_Productos
+(Nombre, Descripcion, Cod_Proveedor, Stock, Precio_Venta, Precio_Compra, Cod_Categoria, USUARIO)
+VALUES
+('Nachos', 'Golosina Individual', 2, 400, 1, 0.50, 2, 'JoseAyala'); 
+INSERT INTO TBL_Productos
+(Nombre, Descripcion, Cod_Proveedor, Stock, Precio_Venta, Precio_Compra, Cod_Categoria, USUARIO)
+VALUES
+('Zucaritas', 'Cereal de caja familiar', 3, 200, 25, 22, 3, 'JoseAyala'); 
+INSERT INTO TBL_Productos
+(Nombre, Descripcion, Cod_Proveedor, Stock, Precio_Venta, Precio_Compra, Cod_Categoria, USUARIO)
+VALUES
+('Jalapeños', 'Golosina Individual', 2, 200, 1, 0.50, 2, 'JoseAyala'); 
+
+
+--Tabla Puestos--
+INSERT INTO TBL_Puestos
+(Nombre_Puesto, Salario, USUARIO)
+VALUES
+('Cajero', 2600, 'JoseAyala'); 
+INSERT INTO TBL_Puestos
+(Nombre_Puesto, Salario, USUARIO)
+VALUES
+('Gerente', 4500, 'JoseAyala'); 
+INSERT INTO TBL_Puestos
+(Nombre_Puesto, Salario, USUARIO)
+VALUES
+('Conserje', 3000, 'JoseAyala'); 
+
+--Tabla Privilegios--
+INSERT INTO TBL_Privilegios
+(Nombre_Privilegio, USUARIO)
+VALUES
+('Administrador', 'JoseAyala');
+INSERT INTO TBL_Privilegios
+(Nombre_Privilegio, USUARIO)
+VALUES
+('Ventas', 'JoseAyala');
+INSERT INTO TBL_Privilegios
+(Nombre_Privilegio, USUARIO)
+VALUES
+('Cajero', 'JoseAyala');
+
+--Tabla Usuarios--
+INSERT INTO TBL_Usuarios
+(Usuario, Contraseña, Cod_Privilegio, USUARIOC)
+VALUES
+('brandon.pineda', 'pineda2021', 3, 'JoseAyala');
+INSERT INTO TBL_Usuarios
+(Usuario, Contraseña, Cod_Privilegio, USUARIOC)
+VALUES
+('jonathan.rene', 'rene2021', 2, 'JoseAyala');
+INSERT INTO TBL_Usuarios
+(Usuario, Contraseña, Cod_Privilegio, USUARIOC)
+VALUES
+('jose.diaz', 'diaz2021', 3, 'JoseAyala');
+INSERT INTO TBL_Usuarios
+(Usuario, Contraseña, Cod_Privilegio, USUARIOC)
+VALUES
+('juan.lopez', 'lopez2021', 3, 'JoseAyala');
+
+--Tabla Pagos--
+INSERT INTO TBL_Pagos
+(Nombre_Metodo, USUARIO)
+VALUES
+('Efectivo', 'JoseAyala');
+INSERT INTO TBL_Pagos
+(Nombre_Metodo, USUARIO)
+VALUES
+('Deposito', 'JoseAyala');
+INSERT INTO TBL_Pagos
+(Nombre_Metodo, USUARIO)
+VALUES
+('Cheque', 'JoseAyala');
+
+--Tabla Contrato--
+INSERT INTO TBL_Contrato
+(Tipo_Contrato, USUARIO)
+VALUES
+('Planilla', 'JoseAyala');
+INSERT INTO TBL_Contrato
+(Tipo_Contrato, USUARIO)
+VALUES
+('Honorarios', 'JoseAyala');
+
+--Tabla Estudios--
+INSERT INTO TBL_Estudios
+(Nivel, USUARIO)
+VALUES
+('Primario', 'JoseAyala');
+INSERT INTO TBL_Estudios
+(Nivel, USUARIO)
+VALUES
+('Secundaria', 'JoseAyala');
+INSERT INTO TBL_Estudios
+(Nivel, USUARIO)
+VALUES
+('Bachillerato', 'JoseAyala');
+INSERT INTO TBL_Estudios
+(Nivel, USUARIO)
+VALUES
+('Universidad', 'JoseAyala');
+
+--Tabla Empleados--
+INSERT INTO TBL_Empleados
+(Nombre_Empleado, Apellido_Empleado, DPI, Cod_Puesto, Direccion, Cod_Departamentos, Cod_Municipios, Nit, Fecha_Nacimiento, Cod_Telefono, Telefono, Usuario, Correo, Cod_Estudios, Cod_Pagos, Numero_Cuenta, Cod_Contrato, USUARIOC)
+VALUES
+('Brandon', 'Pineda', 54784587, 3, 'La Majada', 22, 338, '58784589', '1999-10-22', 2, '58575857', 'brandon.pineda', 'brandonpineda@gmai.com', 1, 2, 451545785, 1, 'JoseAyala');
+INSERT INTO TBL_Empleados
+(Nombre_Empleado, Apellido_Empleado, DPI, Cod_Puesto, Direccion, Cod_Departamentos, Cod_Municipios, Nit, Fecha_Nacimiento, Cod_Telefono, Telefono, Usuario, Correo, Cod_Estudios, Cod_Pagos, Numero_Cuenta, Cod_Contrato, USUARIOC)
+VALUES
+('Jonathan', 'Rene', 36554782, 2, 'Cruz de Mayo', 22, 338, '89788785', '2001-01-29', 2, '45154965', 'jonathan.rene', 'cuchurrumi@outlook.com', 2, 1, 87895446, 1, 'JoseAyala');
+INSERT INTO TBL_Empleados
+(Nombre_Empleado, Apellido_Empleado, DPI, Cod_Puesto, Direccion, Cod_Departamentos, Cod_Municipios, Nit, Fecha_Nacimiento, Cod_Telefono, Telefono, Usuario, Correo, Cod_Estudios, Cod_Pagos, Numero_Cuenta, Cod_Contrato, USUARIOC)
+VALUES
+('Jose', 'Diaz', 58987547, 1, 'Barrio La Estacion', 22, 338, '46589875', '1999-08-30', 1, '79854854', 'jose.diaz', 'joseyjeny@yahoo.com', 4, 1, 878954424, 1, 'JoseAyala');
