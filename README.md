@@ -1,13 +1,14 @@
 
 
-`	  	`***Correlativo No. 001 Versión No. 01***   
+`	  	`***Correlativo No. 001 Versión No. 01*** 
+
+*DERCAS*
 
 **Documento de Especificaciones, Requerimientos y Criterios de**   **Aceptación de Software**   
-**
 
 
 1. **DATOS GENERALES DEL SOLICITANTE:**   
-**
+
 
 
 **Lugar y fecha:**   
@@ -26,8 +27,7 @@
 |Componente:  |Compra y venta de productos   |
 **   
 
-1. **FUNCIONALIDAD GENERAL REQUERIDA (OBJETIVOS Y ALCANCE  - concretos, medibles, realizables):**   
-**
+1. **FUNCIONALIDAD GENERAL REQUERIDA (OBJETIVOS Y ALCANCE  - concretos, medibles, realizables):*   
 
 
 |<p>Creación sistema Validaciones con las siguientes características:   </p><p>A. **Menú principal**   </p><p>B. **Sub menús**   </p><p>C. **Roles de usuario**   </p><p>D. **Menú panel de control ( usuario administrador )**   </p>|
@@ -82,9 +82,8 @@ desarrollar. Por favor incluya los siguientes tipos:
 |Funcionalidad 6 Reportes  |<p>Realizar reportes de los productos, por código de producto, por proveedor, y por nombre  </p><p>Realizar reportes de los clientes por código de cliente, por dpi, por nombre y por número de teléfono  </p><p>Realizar reporte de ventas por número de factura, cliente, producto y cantidad de productos vendidos  </p><p>Realizar reporte de los proveedores por código, contacto directo, nombre de proveedor.  </p>|
 |Funcionalidad 7 Creación de facturas  |<p>El sistema deberá ser capaz de crear una factura única dando como parámetro los siguientes datos.  </p><p>  </p><p>- *Numero único de factura*  </p><p>- *Nombre del cliente*  </p><p>- *Nit del cliente*  </p><p>- *Dirección*  </p><p>- *Productos adquiridos*  </p><p>- *Cantidad de productos*  </p><p>- *Precio unitario*   </p><p>- *Precio total*  </p><p>  </p>|
 **    
-**
 
-`  	`*Documento de Especificaciones, Requerimientos y Criterios de Aceptación de Software -DERCAS-   	Página*  PAGE   \\* MERGEFORMAT *4 de*  NUMPAGES   \\* MERGEFORMAT *4*   
+ 
 
 
 #
